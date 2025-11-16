@@ -1,0 +1,60 @@
+{
+    "name": "CCNA 1 v7 Modules 1 - 3 Basic Network Connectivity and Communications Exam Answers",
+    "file": "data.html",
+    "expected": [
+        {
+            "question": "What is an ISP?",
+            "answers": [
+                "It is an organization that enables individuals and businesses to connect to the Internet."
+            ]
+        },
+        {
+            "question": "What type of network traffic requires QoS?",
+            "answers": ["video conferencing"]
+        },
+        {
+            "question": "Which interface allows remote management of a Layer 2 switch?",
+            "answers": ["the switch virtual interface"]
+        },
+        {
+            "question": "How is SSH different from Telnet?",
+            "answers": [
+                "SSH provides security to \nremote sessions by encrypting messages and using user authentication. \nTelnet is considered insecure and sends messages in plaintext."
+            ]
+        },
+        {
+            "question": "What are three characteristics of an SVI? (Choose three.)",
+            "answers": [
+                "It is not associated with any physical interface on a switch.",
+                "It provides a means to remotely manage a switch.",
+                "It is associated with VLAN1 by default."
+            ]
+        },
+        {
+            "question": "Which name is assigned to the transport layer PDU?",
+            "answers": ["segment"]
+        },
+        {
+            "question": "What process involves placing one PDU inside of another PDU?",
+            "answers": ["encapsulation"]
+        },
+        {
+            "question": "What is a characteristic of multicast messages?",
+            "answers": ["They are sent to a select group of hosts."]
+        },
+        {
+            "question": "Which statement is correct about network protocols?",
+            "answers": [
+                "They define how messages are exchanged between the source and the destination."
+            ]
+        },
+        {
+            "question": "Why would a Layer 2 switch need an IP address?",
+            "answers": ["to enable the switch to be managed remotely"]
+        },
+        {
+            "question": "Which two devices are intermediary devices? (Choose two)",
+            "answers": ["Router", "Switch"]
+        }
+    ]
+}
