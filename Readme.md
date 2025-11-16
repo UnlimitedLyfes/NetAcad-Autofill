@@ -6,8 +6,8 @@
 
 ## Description
 
-A UserScript for autofilling the Answers on the **CCNA**.
-forked and modified from https://git.euph.dev/Userscripts/CCNA_Autofill
+A UserScript for autofilling the Answers on the **CCNA**.  
+Forked and modified from https://git.euph.dev/Userscripts/CCNA_Autofill
 
 ## Usage
 
