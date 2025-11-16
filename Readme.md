@@ -1,7 +1,4 @@
-# CCNA_Autofill
-
-![Stars Badge](https://git.euph.dev/Userscripts/CCNA_Autofill/badges/stars.svg?style=flat-square&label=★Stars&labelColor=gray&color=yellow)
-![QS Badge](https://git.euph.dev/Userscripts/CCNA_Autofill/actions/workflows/qs.yml/badge.svg?style=flat-square&label=Status&labelColor=gray)
+# NetAcad Autofill
 
 ## Installation
 
@@ -10,11 +7,9 @@
 ## Description
 
 A UserScript for autofilling the Answers on the **CCNA**.
-inspired by [Merlinfuchs/ccna-extension](https://github.com/merlinfuchs/ccna-extension).
+forked and modified from https://git.euph.dev/Userscripts/CCNA_Autofill
 
 ## Usage
-
-This only works directly on the exam website.
 
 -   `p`: Paste your answer-URL from [ItexamAnswers](https://itexamanswers.net) for the **CCNAv7** use [these](https://itexamanswers.net/ccna-1-v7-modules-1-3-basic-network-connectivity-and-communications-exam-answers.html).
 -   `a`: Try autofilling the current answer. There won't be any visual feedback when it fails.
