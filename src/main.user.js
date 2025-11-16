@@ -6,8 +6,9 @@
 // @match       *://netacad.com/launch?id=*
 // @match       *://www.netacad.com/launch?id=*
 // @match       *://www.netacad.com/content/srwe/1.0/index.html*
-// @require     
-// @require     
+// @require     https://github.com/UnlimitedLyfes/NetAcad-Autofill/raw/refs/heads/main/src/answer.js
+// @require     https://github.com/UnlimitedLyfes/NetAcad-Autofill/raw/refs/heads/main/src/fetch.js
+// @require     https://github.com/UnlimitedLyfes/NetAcad-Autofill/raw/refs/heads/main/src/next.js
 // @grant       GM_setValue
 // @grant       GM_getValue
 // @grant       GM_xmlhttpRequest
