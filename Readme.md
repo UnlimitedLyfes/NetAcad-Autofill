@@ -2,7 +2,7 @@
 
 ## Installation
 
-[![Install Userscript](https://img.shields.io/badge/Install_Userscript-CCNA_Autofill-gray?style=for-the-badge&logo=greasyfork&logoColor=black&labelColor=brown)](https://github.com/UnlimitedLyfes/NetAcad-Autofill/raw/refs/heads/main/src/main.user.js)
+[![Install Userscript](https://img.shields.io/badge/Install_Userscript-NetAcad_Autofill-gray?style=for-the-badge&logo=greasyfork&logoColor=black&labelColor=brown)](https://github.com/UnlimitedLyfes/NetAcad-Autofill/raw/refs/heads/main/src/main.user.js)
 
 ## Description
 
