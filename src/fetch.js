@@ -41,6 +41,7 @@ function parseAnswers(response, resolve) {
         }
     }
     results = removeDuplicates(results);
+    console.log('Parsed Q&As:', results);
     resolve(results);
 }
 
