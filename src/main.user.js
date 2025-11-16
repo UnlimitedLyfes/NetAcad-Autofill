@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        CCNA_Autofill
+// @name        NetAcad-Autofill
 // @namespace   https://github.com/UnlimitedLyfes
 // @match       *://assessment.netacad.net/*
 // @match       *://www.assessment.netacad.net/*
