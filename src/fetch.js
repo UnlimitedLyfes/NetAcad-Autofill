@@ -49,7 +49,6 @@ function parseAnswers(response, resolve) {
  */
 function removeDuplicates(results) {
     const seen = new Set();
-    console.log('worked removal');
     return results.filter(v => {
         if (seen.has(v.question)) {
             return false;
@@ -136,9 +135,7 @@ function parseQuestion(questionElement) {
  */
 function getAnswersElement(index, allAnswersElement) {
     let answersElement = allAnswersElement.children[index + 1];
-    console.log(index + ': ', answersElement);
     if (answersElement.tagName === 'P' || answersElement.tagName === 'DIV') {
-        console.log(answersElement);
         answersElement = allAnswersElement.children[index + 2];
     }
     return answersElement;

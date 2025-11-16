@@ -16,7 +16,6 @@ function answerQuestion(answerData) {
     }, document);
     const question = shadow.querySelector('base-view').shadowRoot;
     const questionTextDom = question.querySelector('p').parentElement;
-    console.log(questionTextDom);
     const questionText = questionTextDom.textContent.trim();
     if (!questionText) {
         console.error('Cant find question');
@@ -65,7 +64,6 @@ function findAnswers(answerData, questionText, answers) {
     const correctAnswers = [];
     for (let entry of answerData) {
         if (matchAnswer(questionText.trim(), entry.question.trim())) {
-            console.log('found');
             for (let availableAnswer of answers) {
                 for (let possibleAnswer of entry.answers) {
                     if (
