@@ -66,12 +66,10 @@ function findAnswers(answerData, questionText, answers) {
     for (let entry of answerData) {
         if (matchAnswer(questionText.trim(), entry.question.trim())) {
             for (let availableAnswer of answers) {
-                // console.log(
-                //     availableAnswer.textContent
-                //         .trim()
-                //         .replace(/[^\w]/gi, '')
-                //         .replace(/\dof\d$/, '')
-                // );
+                console.log(
+                    availableAnswer.textContent
+                        .trim()
+                );
                 for (let possibleAnswer of entry.answers) {
                     if (
                         matchAnswer(
@@ -95,8 +93,12 @@ function matchAnswer(textA, textB) {
     textB = textB.replace(replaceRegex, '');
     textA = textA.replace(replaceRegex2, '');
     textB = textB.replace(replaceRegex2, '');
+    textA = textA.toLowerCase();
+    textB = textB.toLowerCase();
     //console.log(textA, textB);
-    return textA === textB;
+    const firstCheck = textA === textB
+    const secondCheck = textA.replace('ptactivity', '') === textB;
+    return firstCheck || secondCheck; // Havent seen an answer that relies on case
 }
 
 window.answerQuestion = answerQuestion;

@@ -1,4 +1,4 @@
-const QUESTION_REGEX = /^[0-9]+\. (.*)$/;
+const QUESTION_REGEX = /^[0-9]+\.\s?(.*)$/;
 /**
  * Fetches answers from the specified URL.
  * @param {string} [answerURL=""] - The URL to fetch answers from.
@@ -162,6 +162,8 @@ function getAnswers(answersElement) {
         let ansPortion = Array.from(
             item.querySelectorAll('strong, .correct_answer')
         );
+        //if ((item.className = 'correct_answer')) ansPortion.push(item); //the website puts everything as correct_answer...
+
         if (!ansPortion) continue;
         let answerText = '';
         for (let answerStrDom of ansPortion) {
@@ -170,7 +172,7 @@ function getAnswers(answersElement) {
         if (answerText.endsWith('*')) {
             answerText = answerText.substring(0, answerText.length - 1);
         }
-        answers.push(answerText);
+        if(answerText) answers.push(answerText);
     }
     //console.log(answers);
     return answers;
