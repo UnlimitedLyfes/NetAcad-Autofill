@@ -1,5 +1,4 @@
 const QUESTION_REGEX = /^[0-9]+\. (.*)$/;
-
 /**
  * Fetches answers from the specified URL.
  * @param {string} [answerURL=""] - The URL to fetch answers from.
@@ -35,12 +34,12 @@ function parseAnswers(response, resolve) {
     let index = -1;
     for (let child of Array.from(allAnswersElement.children)) {
         index++;
-        console.groupCollapsed(index);
+        //console.groupCollapsed(index);
         const result = parseAnswerElement(index, child, allAnswersElement);
         if (result != undefined) {
             results.push(result);
         }
-        console.groupEnd()
+        //console.groupEnd();
     }
     results = removeDuplicates(results);
     console.log('Parsed Q&As:', results);
@@ -114,7 +113,7 @@ function parseAnswerElement(index, element, allAnswersElement) {
     // Get Awsners
     const answersElement = getAnswersElement(index, allAnswersElement);
     if (answersElement === null) return;
-    console.log(questionText);
+    //console.log(questionText);
     return {
         question: questionText,
         answers: getAnswers(answersElement)
@@ -137,9 +136,9 @@ function parseQuestion(questionElement) {
  * @returns {Element}
  */
 function getAnswersElement(index, allAnswersElement) {
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 10; i++) {
         let answersElement = allAnswersElement.children[index + i];
-        if (answersElement&&answersElement.tagName === 'UL') {
+        if (answersElement && answersElement.tagName === 'UL') {
             return answersElement;
         }
     }
@@ -158,21 +157,23 @@ function getAnswersElement(index, allAnswersElement) {
  */
 function getAnswers(answersElement) {
     const answers = [];
-    console.log(answersElement)
-    for (let answerDom of Array.from(answersElement.querySelectorAll('strong, .correct_answer')))  
-    {
-        let answerText = answerDom.textContent.trim();
+    //console.log(answersElement);
+    for (let item of Array.from(answersElement.querySelectorAll('li'))) {
+        let ansPortion = Array.from(
+            item.querySelectorAll('strong, .correct_answer')
+        );
+        if (!ansPortion) continue;
+        let answerText = '';
+        for (let answerStrDom of ansPortion) {
+            answerText += answerStrDom.textContent.trim();
+        }
         if (answerText.endsWith('*')) {
             answerText = answerText.substring(0, answerText.length - 1);
         }
         answers.push(answerText);
     }
-    console.log(answers);
+    //console.log(answers);
     return answers;
 }
 
 window.fetchAnswers = fetchAnswers;
-
-
-
-
