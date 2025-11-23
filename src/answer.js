@@ -30,8 +30,7 @@ function answerQuestion(answerData) {
         return;
     }
     const answers = answersDom.children;
-
-    for (let answer of Array.from(answers)) {
+    for (let answer of Array.from(answers)) {  
         const input = answer.querySelector('input');
         if (!input) continue;
         input.checked = false;
@@ -61,7 +60,9 @@ function findAnswers(answerData, questionText, answers) {
     if (answerData === null) {
         return [];
     }
+    //console.log("Answers: ", answers)
     const correctAnswers = [];
+    //console.log(answerData);
     for (let entry of answerData) {
         if (matchAnswer(questionText.trim(), entry.question.trim())) {
             for (let availableAnswer of answers) {
@@ -83,8 +84,12 @@ function findAnswers(answerData, questionText, answers) {
 
 function matchAnswer(textA, textB) {
     const replaceRegex = /[^\w]/gi;
+    const replaceRegex2 = /\dof\d$/
     textA = textA.replace(replaceRegex, '');
     textB = textB.replace(replaceRegex, '');
+    textA = textA.replace(replaceRegex2, '');
+    textB = textB.replace(replaceRegex2, '');
+    //console.log(textA, textB);
     return textA === textB;
 }
 

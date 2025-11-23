@@ -35,10 +35,12 @@ function parseAnswers(response, resolve) {
     let index = -1;
     for (let child of Array.from(allAnswersElement.children)) {
         index++;
+        console.groupCollapsed(index);
         const result = parseAnswerElement(index, child, allAnswersElement);
         if (result != undefined) {
             results.push(result);
         }
+        console.groupEnd()
     }
     results = removeDuplicates(results);
     console.log('Parsed Q&As:', results);
@@ -111,8 +113,8 @@ function parseAnswerElement(index, element, allAnswersElement) {
 
     // Get Awsners
     const answersElement = getAnswersElement(index, allAnswersElement);
-    if (answersElement === null || answersElement.tagName !== 'UL') return;
-
+    if (answersElement === null) return;
+    console.log(questionText);
     return {
         question: questionText,
         answers: getAnswers(answersElement)
@@ -135,11 +137,19 @@ function parseQuestion(questionElement) {
  * @returns {Element}
  */
 function getAnswersElement(index, allAnswersElement) {
-    let answersElement = allAnswersElement.children[index + 1];
-    if (answersElement.tagName === 'P' || answersElement.tagName === 'DIV') {
-        answersElement = allAnswersElement.children[index + 2];
+    for (let i = 1; i <= 4; i++) {
+        let answersElement = allAnswersElement.children[index + i];
+        if (answersElement&&answersElement.tagName === 'UL') {
+            return answersElement;
+        }
     }
-    return answersElement;
+    return null;
+
+    //let answersElement = allAnswersElement.children[index + 1];
+    // if (answersElement.tagName === 'P' || answersElement.tagName === 'DIV') {
+    //     answersElement = allAnswersElement.children[index + 2];
+    // }
+    // return answersElement;
 }
 
 /**
@@ -148,17 +158,21 @@ function getAnswersElement(index, allAnswersElement) {
  */
 function getAnswers(answersElement) {
     const answers = [];
-    for (let answerDom of Array.from(
-        answersElement.querySelectorAll('strong')
-    )) {
+    console.log(answersElement)
+    for (let answerDom of Array.from(answersElement.querySelectorAll('strong, .correct_answer')))  
+    {
         let answerText = answerDom.textContent.trim();
         if (answerText.endsWith('*')) {
             answerText = answerText.substring(0, answerText.length - 1);
         }
         answers.push(answerText);
     }
-
+    console.log(answers);
     return answers;
 }
 
 window.fetchAnswers = fetchAnswers;
+
+
+
+
